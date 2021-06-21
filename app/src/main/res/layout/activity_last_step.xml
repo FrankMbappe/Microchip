@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LastStepActivity">
+
+
+    <ImageView
+        android:id="@+id/activityLastStepIDCardImage"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/placeholder"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/activityLastStepTxtAddPicture"
+        style="@style/defaultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/white"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/black"
+        android:padding="10dp"
+        android:text="@string/str_take_a_picture"
+        app:drawableStartCompat="@drawable/ic_photo_camera"
+        app:layout_constraintBottom_toBottomOf="@+id/activityLastStepIDCardImage"
+        app:layout_constraintEnd_toEndOf="@+id/activityLastStepIDCardImage"/>
+
+
+    <TextView
+        android:id="@+id/activityLastStepTxtLocation"
+        style="@style/defaultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_tap_on_refresh_to_get_your_location"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/activityLastStepIDCardImage"
+        app:layout_constraintStart_toStartOf="@+id/activityLastStepIDCardImage"
+        app:layout_constraintTop_toBottomOf="@+id/activityLastStepIDCardImage"
+        android:layout_marginTop="@dimen/default_padding"/>
+
+    <Button
+        android:id="@+id/activityLastStepGetLocationBtn"
+        style="@style/secondaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="@string/str_refresh"
+        app:layout_constraintEnd_toEndOf="@+id/activityLastStepIDCardImage"
+        app:layout_constraintStart_toStartOf="@+id/activityLastStepIDCardImage"
+        app:layout_constraintTop_toBottomOf="@+id/activityLastStepTxtLocation"
+        android:layout_marginTop="@dimen/default_field_spacing"/>
+
+    <Button
+        android:id="@+id/activityLastStepPreviousBtn"
+        style="@style/secondaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/str_previous"
+        app:layout_constraintStart_toStartOf="@+id/activityLastStepIDCardImage"
+        app:layout_constraintTop_toBottomOf="@+id/activityLastStepGetLocationBtn"
+        android:layout_marginStart="@dimen/default_padding"/>
+
+    <Button
+        android:id="@+id/activityLastStepSaveBtn"
+        style="@style/primaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_save"
+        app:layout_constraintEnd_toEndOf="@+id/activityLastStepIDCardImage"
+        app:layout_constraintTop_toTopOf="@+id/activityLastStepPreviousBtn"
+        android:layout_marginEnd="@dimen/default_padding"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

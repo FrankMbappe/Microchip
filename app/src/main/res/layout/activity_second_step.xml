@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/default_padding"
+    tools:context=".activities.SecondStepActivity">
+
+    <TextView
+        style="@style/screenTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_second_step"
+        app:layout_constraintBottom_toTopOf="@+id/activitySecondStepFullNameTIL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/activitySecondStepFullNameTIL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/str_full_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/activitySecondStepFullNameTxtInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="name"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/activitySecondStepBirthdateTIL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/val_date_format"
+        app:layout_constraintEnd_toEndOf="@+id/activitySecondStepFullNameTIL"
+        app:layout_constraintStart_toStartOf="@+id/activitySecondStepFullNameTIL"
+        app:layout_constraintTop_toBottomOf="@id/activitySecondStepFullNameTIL"
+        android:layout_marginTop="@dimen/default_field_spacing">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/activitySecondStepBirthdateTxtInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/activitySecondStepNextBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_next"
+        app:layout_constraintEnd_toEndOf="@+id/activitySecondStepBirthdateTIL"
+        app:layout_constraintTop_toBottomOf="@+id/activitySecondStepBirthdateTIL"
+        android:layout_marginTop="@dimen/default_field_spacing"
+        style="@style/primaryButton"/>
+
+    <Button
+        android:id="@+id/activitySecondStepPreviousBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_previous"
+        app:layout_constraintStart_toStartOf="@id/activitySecondStepBirthdateTIL"
+        app:layout_constraintTop_toBottomOf="@id/activitySecondStepBirthdateTIL"
+        android:layout_marginTop="@dimen/default_field_spacing"
+        style="@style/secondaryButton"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Microchip</string>
+    <string name="str_chip_number">Chip number</string>
+    <string name="str_id_card_number">ID Card number</string>
+    <string name="str_id_card_picture">ID Card picture</string>
+    <string name="str_next">Next</string>
+    <string name="str_previous">Previous</string>
+    <string name="str_save">Save</string>
+    <string name="str_full_name">Full name</string>
+    <string name="str_birth_date">Birthdate</string>
+    <string name="str_gps_location">GPS location</string>
+    <string name="str_customer_list">Customer list</string>
+    <string name="str_register">Register</string>
+    <string name="str_take_a_picture">Take a picture</string>
+    <string name="str_first_step">First step</string>
+    <string name="str_second_step">Second step</string>
+    <string name="str_last_step">Last step</string>
+    <string name="str_refresh">Refresh</string>
+    <string name="str_tap_on_refresh_to_get_your_location">Tap on \'refresh\' to get your location</string>
+    <string name="str_details">Details</string>
+    <string name="val_date_format">DD/MM/YYYY</string>
+    <string name="str_your_location">Your location</string>
+</resources>
