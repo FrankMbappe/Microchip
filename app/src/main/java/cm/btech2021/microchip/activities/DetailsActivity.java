@@ -5,6 +5,7 @@ import static cm.btech2021.microchip.adapters.CustomerAdapter.EXTRA_CUSTOMER;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.widget.ImageButton;
@@ -13,8 +14,8 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 
+import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 
 import cm.btech2021.microchip.R;
 import cm.btech2021.microchip.models.Customer;
@@ -46,11 +47,11 @@ public class DetailsActivity extends AppCompatActivity {
         if (extra != null){
             customer = new Gson().fromJson(extra, Customer.class);
 
-            if (customer.getIdCardPhotoUri() != null) {
+            if (customer.getIdCardPhotoUriPath() != null) {
                 try {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(
                             this.getContentResolver(),
-                            customer.getIdCardPhotoUri()
+                            Uri.fromFile(new File(customer.getIdCardPhotoUriPath()))
                     );
                     imageView.setImageBitmap(bitmap);
 

@@ -1,6 +1,5 @@
 package cm.btech2021.microchip.activities;
 
-import static cm.btech2021.microchip.activities.FirstStepActivity.EXTRA_FIRST_STEP_CUSTOMER;
 import static cm.btech2021.microchip.activities.SecondStepActivity.EXTRA_SECOND_STEP_CUSTOMER;
 
 import androidx.annotation.NonNull;
@@ -232,8 +231,9 @@ public class LastStepActivity extends AppCompatActivity {
                 if (selectedImageUri != null) {
                     idCardImageView.setImageURI(selectedImageUri);
                     if (customer != null)
-                        customer.setIdCardPhotoUri(selectedImageUri);
+                        customer.setIdCardPhotoUriPath(selectedImageUri.getPath());
                 }
+
             } else {
                 // Photo has been taken
                 Bundle extras = data.getExtras();
@@ -256,7 +256,7 @@ public class LastStepActivity extends AppCompatActivity {
                         imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, imageOutputStream);
 
                         // Then, customer ID card image uri is updated
-                        customer.setIdCardPhotoUri(Uri.fromFile(file));
+                        customer.setIdCardPhotoUriPath(file.getAbsolutePath());
 
                         Toast.makeText(this, "Successfully saved image to "
                                 + file.getAbsolutePath(), Toast.LENGTH_LONG).show();

@@ -3,6 +3,7 @@ package cm.btech2021.microchip.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -50,11 +52,11 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHo
             context.startActivity(intent);
         });
 
-        if (customer.getIdCardPhotoUri() != null) {
+        if (customer.getIdCardPhotoUriPath() != null) {
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(
                         context.getContentResolver(),
-                        customer.getIdCardPhotoUri()
+                        Uri.fromFile(new File(customer.getIdCardPhotoUriPath()))
                 );
                 holder.imageCustomerView.setImageBitmap(bitmap);
 

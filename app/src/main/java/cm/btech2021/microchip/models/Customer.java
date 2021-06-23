@@ -8,7 +8,7 @@ import java.util.Date;
 public class Customer {
     String chipNumber;
     String idCardNumber;
-    Uri idCardPhotoUri;
+    String idCardPhotoUriPath;
     String fullName;
     Date dateOfBirth;
     Location sellLocation;
@@ -21,17 +21,17 @@ public class Customer {
         this.idCardNumber = idCardNumber;
     }
 
-    public Customer(String chipNumber, String idCardNumber, Uri idCardPhotoUri, String fullName, Date dateOfBirth, Location sellLocation) {
+    public Customer(String chipNumber, String idCardNumber, String idCardPhotoUriPath, String fullName, Date dateOfBirth, Location sellLocation) {
         this.chipNumber = chipNumber;
         this.idCardNumber = idCardNumber;
-        this.idCardPhotoUri = idCardPhotoUri;
+        this.idCardPhotoUriPath = idCardPhotoUriPath;
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
         this.sellLocation = sellLocation;
     }
 
     public boolean isValid() {
-        return chipNumber != null && idCardNumber != null && idCardPhotoUri != null
+        return chipNumber != null && idCardNumber != null && idCardPhotoUriPath != null
                 && fullName != null && dateOfBirth != null && sellLocation != null;
     }
 
@@ -51,12 +51,12 @@ public class Customer {
         this.idCardNumber = idCardNumber;
     }
 
-    public Uri getIdCardPhotoUri() {
-        return idCardPhotoUri;
+    public String getIdCardPhotoUriPath() {
+        return idCardPhotoUriPath;
     }
 
-    public void setIdCardPhotoUri(Uri idCardPhotoUri) {
-        this.idCardPhotoUri = idCardPhotoUri;
+    public void setIdCardPhotoUriPath(String idCardPhotoUriPath) {
+        this.idCardPhotoUriPath = idCardPhotoUriPath;
     }
 
     public String getFullName() {
